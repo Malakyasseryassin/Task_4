@@ -147,14 +147,16 @@ export default function AllPerks() {
             
             
             <div>
-              <label className="block text-sm font-medium text-zinc-700 mb-2">
+              <label htmlFor="name-filter" className="block text-sm font-medium text-zinc-700 mb-2">
                 <span className="material-symbols-outlined text-sm align-middle">search</span>
                 {' '}Search by Name
               </label>
               <input
+                id="name-filter"
                 type="text"
                 className="input"
                 placeholder="Enter perk name..."
+                value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
               />
               <p className="text-xs text-zinc-500 mt-1">
@@ -164,13 +166,16 @@ export default function AllPerks() {
 
             {/* Merchant Filter Dropdown - Controlled Component */}
             <div>
-              <label className="block text-sm font-medium text-zinc-700 mb-2">
+              <label htmlFor="merchant-filter" className="block text-sm font-medium text-zinc-700 mb-2">
                 <span className="material-symbols-outlined text-sm align-middle">store</span>
                 {' '}Filter by Merchant
               </label>
               <select
+                id="merchant-filter"
                 className="input"
+                value={merchantFilter}
                 onChange={e => setMerchantFilter(e.target.value)}
+                aria-label="Filter by Merchant"
               >
                 <option value="">All Merchants</option>
                 
